@@ -1,6 +1,4 @@
 #!/bin/bash
-# switch to root
-sudo su
 # upgrade full system
 apt-get -y full-upgrade
 apt-get -y install software-properties-common
@@ -176,6 +174,3 @@ apt-get -y install tint
 # Private Internet Access
 wget https://www.privateinternetaccess.com/installer/pia-nm.sh
 fish pia-nm.sh
-# Reset
-$SHELL
-su starlight
