@@ -22,9 +22,9 @@ add-apt-repository \
    $(lsb_release -cs) \
    stable"
 # update all packages
-apt update
+apt-get -y update
 # install packages to allow apt to use a repository over HTTPS
-apt install \
+apt-get -y install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -33,14 +33,14 @@ apt install \
 # WhiteSur
 curl -L "https://raw.githubusercontent.com/vinceliuice/WhiteSur-kde/master/install.sh" | source
 # Fish
-apt install fish
+apt-get -y install fish
 chsh -s /usr/local/bin/fish
 fish
 mv ./config.fish ~/.config/fish/
 # git
-apt install git-all
+apt-get -y install git-all
 # GitHub
-apt install gh
+apt-get -y install gh
 # ohmyfish
 curl -L https://get.oh-my.fish | fish
 # MesloLGS fonts
@@ -65,9 +65,9 @@ nvm install node
 nvm use node
 # Yarn
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-apt install --no-install-recommends yarn
+apt-get -y install --no-install-recommends yarn
 # Python dependencies
-apt install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+apt-get -y install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 echo "set --export PYENV_ROOT $HOME/.pyenv" > ~/.config/fish/conf.d/pyenv.fish
@@ -78,23 +78,23 @@ echo -e "\n# Enable virtualenv autocomplete\nstatus --is-interactive; and pyenv 
 pyenv install 3.10-dev
 echo "if which pyenv > /dev/null; eval "$(pyenv init -)"; end" >> ~/.profile
 # pip3
-apt -y install python3-pip
+apt-get -y install python3-pip
 # golang
 tar -C /usr/local -xzf go1.14.3.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 # C
-apt install gcc
-apt install build-essential
+apt-get -y install gcc
+apt-get -y install build-essential
 # LibreWolf
 curl -L -o "LibreWolf" "https://gitlab.com/librewolf-community/browser/linux/uploads/cfdd906e663aef41c869573abbd0fb06/LibreWolf-85.0.1-1.x86_64.AppImage"
 chmod +x ./LibreWolf
 # Tor
-apt install tor
+apt-get -y install tor
 # Vim
-apt install vim
+apt-get -y install vim
 # Atom
 sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
-apt install atom
+apt-get -y install atom
 # Atom themes
 apm install 90s-hack-syntax
 apm install 90s-hack-ui
@@ -130,49 +130,49 @@ apm install tool-bar
 apm install tool-bar-markdown-writter
 apm install zentabs
 # Docker
-apt install docker-ce docker-ce-cli containerd.io
+apt-get -y install docker-ce docker-ce-cli containerd.io
 # KeePassXC
-apt install keepassxc
+apt-get -y install keepassxc
 # Discord
 wget "https://discordapp.com/api/download?platform=linux&format=deb" -O discord.deb
 dpkg -i discord.deb
-apt-get install -f
+apt-get -y install -f
 # Terminator
-apt install terminator
+apt-get -y install terminator
 # qBittorrent
-apt install qbittorrent
+apt-get -y install qbittorrent
 # VLC
-apt install vlc
+apt-get -y install vlc
 # VirtualBox
-apt install virtualbox
-apt install virtualbox—ext–pack
+apt-get -y install virtualbox
+apt-get -y install virtualbox—ext–pack
 # LibreOffice
-apt install libreoffice
+apt-get -y install libreoffice
 # Slack
 wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.12.2-amd64.deb
-apt install ./slack-desktop-*.deb
+apt-get -y install ./slack-desktop-*.deb
 # Zoom
 wget https://zoom.us/client/latest/zoom_amd64.deb
-apt install ./zoom_amd64.deb
+apt-get -y install ./zoom_amd64.deb
 rm ./zoom_amd64.deb
 # Microsoft Teams
 wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.3.00.5153_amd64.deb
-apt install ./teams_1.3.00.5153_amd64.deb
+apt-get -y install ./teams_1.3.00.5153_amd64.deb
 rm ./teams_1.3.00.5153_amd64.deb
 # Session
 curl -L -o "Session" "https://www.getsession.org/linux"
 chmod +x ./Session
 # Pinta
-apt install pinta
+apt-get -y install pinta
 # youtube-dl
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 chmod a+rx /usr/local/bin/youtube-dl
 # games
-apt install ninvaders
-apt install pacman4console
-apt install nsnake
-apt install nudoku
-apt install tint
+apt-get -y install ninvaders
+apt-get -y install pacman4console
+apt-get -y install nsnake
+apt-get -y install nudoku
+apt-get -y install tint
 # Private Internet Access
 wget https://www.privateinternetaccess.com/installer/pia-nm.sh
 fish pia-nm.sh
