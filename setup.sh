@@ -2,6 +2,8 @@
 # upgrade full system
 apt-get -y full-upgrade
 apt-get -y install software-properties-common
+# Curl
+apt-get -y install curl
 # add keys
 apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
