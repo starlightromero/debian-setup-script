@@ -1,28 +1,8 @@
 #!/bin/bash
 # upgrade full system
 apt-get -y full-upgrade
-apt-get -y install software-properties-common
 # Curl
 apt-get -y install curl
-# add keys
-apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-# add repositories
-add-apt-repository ppa:libreoffice/ppa
-apt-add-repository ppa:fish-shell/release-3
-add-apt-repository ppa:deadsnakes/ppa
-add-apt-repository ppa:pinta-maintainers/pinta-stable
-add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
-add-apt-repository ppa:phoerious/keepassxc
-apt-add-repository https://cli.github.com/packages
-add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
-# update all packages
-apt-get -y update
 # install packages to allow apt to use a repository over HTTPS
 apt-get -y install \
     apt-transport-https \
@@ -30,17 +10,32 @@ apt-get -y install \
     curl \
     gnupg-agent \
     software-properties-common
+# add keys
+apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+# add repositories
+add-apt-repository ppa:libreoffice/ppa \
+    ppa:fish-shell/release-3 \
+    ppa:deadsnakes/ppa \
+    ppa:pinta-maintainers/pinta-stable \
+    ppa:qbittorrent-team/qbittorrent-stable \
+    ppa:phoerious/keepassxc \
+    https://cli.github.com/packages \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+# update all packages
+apt-get -y update
 # WhiteSur
 curl -L "https://raw.githubusercontent.com/vinceliuice/WhiteSur-kde/master/install.sh" | source
 # Fish
 apt-get -y install fish
 chsh -s /usr/local/bin/fish
-fish
 mv ./config.fish ~/.config/fish/
-# git
-apt-get -y install git-all
-# GitHub
-apt-get -y install gh
+apt-get -y install git-all \
+    gh
 # ohmyfish
 curl -L https://get.oh-my.fish | fish
 # MesloLGS fonts
@@ -83,52 +78,49 @@ apt-get -y install python3-pip
 tar -C /usr/local -xzf go1.14.3.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 # C
-apt-get -y install gcc
-apt-get -y install build-essential
+apt-get -y install gcc \
+    build-essential
 # LibreWolf
 curl -L -o "LibreWolf" "https://gitlab.com/librewolf-community/browser/linux/uploads/cfdd906e663aef41c869573abbd0fb06/LibreWolf-85.0.1-1.x86_64.AppImage"
 chmod +x ./LibreWolf
-# Tor
-apt-get -y install tor
-# Vim
-apt-get -y install vim
+apt-get -y install tor \
+    install vim
 # Atom
 sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 apt-get -y install atom
-# Atom themes
-apm install 90s-hack-syntax
-apm install 90s-hack-ui
-# Atom packages
-apm install atom-beautify
-apm install atom handlebars
-apm install autocomplete-python
-apm install block-cursor
-apm install busy-signal
-apm install color-picker
-apm install docker
-apm install editor-background
-apm install emmet
-apm install expressjs
-apm install flask-snippets
-apm install highlight-selected
-apm install intentions
-apm install language-gemini
-apm install linter
-apm install linter-js-standard
-apm install linter-ui-default
-apm install markdown-writter
-apm install pigments
-apm install platformio-ide-terminal
-apm install prettier-atom
-apm install python-autopep8
-apm install python-black
-apm install react
-apm install smart-gitignore
-apm install standard-formatter
-apm install tidy-markdown
-apm install tool-bar
-apm install tool-bar-markdown-writter
-apm install zentabs
+# Atom themes and packages
+apm install 90s-hack-syntax \
+    90s-hack-ui \
+    atom-beautify \
+    handlebars \
+    autocomplete-python \
+    block-cursor \
+    busy-signal \
+    color-picker \
+    docker \
+    editor-background \
+    emmet \
+    expressjs \
+    flask-snippets \
+    highlight-selected \
+    intentions \
+    language-gemini \
+    linter \
+    linter-js-standard \
+    linter-ui-default \
+    markdown-writter \
+    pigments \
+    platformio-ide-terminal \
+    prettier-atom \
+    python-autopep8 \
+    python-black \
+    react \
+    smart-gitignore \
+    standard-formatter \
+    tidy-markdown \
+    tool-bar \
+    tool-bar-markdown-writter \
+    zentabs \
 # Docker
 apt-get -y install docker-ce docker-ce-cli containerd.io
 # KeePassXC
@@ -137,17 +129,12 @@ apt-get -y install keepassxc
 wget "https://discordapp.com/api/download?platform=linux&format=deb" -O discord.deb
 dpkg -i discord.deb
 apt-get -y install -f
-# Terminator
-apt-get -y install terminator
-# qBittorrent
-apt-get -y install qbittorrent
-# VLC
-apt-get -y install vlc
-# VirtualBox
-apt-get -y install virtualbox
-apt-get -y install virtualbox—ext–pack
-# LibreOffice
-apt-get -y install libreoffice
+apt-get -y install terminator \
+    qbittorrent \
+    vlc \
+    virtualbox \
+    virtualbox—ext–pack \
+    libreoffice
 # Slack
 wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.12.2-amd64.deb
 apt-get -y install ./slack-desktop-*.deb
@@ -168,11 +155,11 @@ apt-get -y install pinta
 curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 chmod a+rx /usr/local/bin/youtube-dl
 # games
-apt-get -y install ninvaders
-apt-get -y install pacman4console
-apt-get -y install nsnake
-apt-get -y install nudoku
-apt-get -y install tint
+apt-get -y install ninvaders \
+    pacman4console \
+    nsnake \
+    nudoku \
+    tint
 # Private Internet Access
 wget https://www.privateinternetaccess.com/installer/pia-nm.sh
 fish pia-nm.sh
