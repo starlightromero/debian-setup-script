@@ -30,6 +30,8 @@ apt install \
     curl \
     gnupg-agent \
     software-properties-common
+# WhiteSur
+curl -L "https://raw.githubusercontent.com/vinceliuice/WhiteSur-kde/master/install.sh" | source
 # Fish
 apt install fish
 chsh -s /usr/local/bin/fish
