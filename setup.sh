@@ -34,6 +34,7 @@ apt install \
 apt install fish
 chsh -s /usr/local/bin/fish
 fish
+mv ./config.fish ~/.config/fish/
 # git
 apt install git-all
 # GitHub
@@ -173,3 +174,6 @@ apt install tint
 # Private Internet Access
 wget https://www.privateinternetaccess.com/installer/pia-nm.sh
 fish pia-nm.sh
+# Reset
+$SHELL
+su starlight
