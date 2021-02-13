@@ -95,6 +95,7 @@ mv ./config.fish /home/starlight/.config/fish/
 fish pia-nm.sh
 # pyenv
 git clone https://github.com/pyenv/pyenv.git /home/starlight/.pyenv
+mkdir /home/starlight/.config/fish/conf.d/
 echo "set --export PYENV_ROOT $HOME/.pyenv" > /home/starlight/.config/fish/conf.d/pyenv.fish
 set -U fish_user_paths $HOME/.pyenv/bin $fish_user_paths
 echo -e '\n\n# pyenv init\nif command -v pyenv 1>/dev/null 2>&1\n  pyenv init - | source\nend' >> /home/starlight/.config/fish/config.fish
