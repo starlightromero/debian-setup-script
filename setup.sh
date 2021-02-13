@@ -85,20 +85,22 @@ dpkg -i discord.deb
 # Remove .deb
 rm ./slack-desktop-*.deb
 rm ./zoom_amd64.deb
+rm ./discord.deb
+rm ./go1.15.8.linux-amd64.tar.gz
 # Fish
 apt-get -y install fish
-mv ./config.fish ~/.config/fish/
+mv ./config.fish /home/starlight/.config/fish/
 # Private Internet Access
 fish pia-nm.sh
 # pyenv
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-echo "set --export PYENV_ROOT $HOME/.pyenv" > ~/.config/fish/conf.d/pyenv.fish
+git clone https://github.com/pyenv/pyenv.git /home/starlight/.pyenv
+echo "set --export PYENV_ROOT $HOME/.pyenv" > /home/starlight/.config/fish/conf.d/pyenv.fish
 set -U fish_user_paths $HOME/.pyenv/bin $fish_user_paths
-echo -e '\n\n# pyenv init\nif command -v pyenv 1>/dev/null 2>&1\n  pyenv init - | source\nend' >> ~/.config/fish/config.fish
+echo -e '\n\n# pyenv init\nif command -v pyenv 1>/dev/null 2>&1\n  pyenv init - | source\nend' >> /home/starlight/.config/fish/config.fish
 git clone https://github.com/pyenv/pyenv-virtualenv.git (pyenv root)/plugins/pyenv-virtualenv
-echo -e "\n# Enable virtualenv autocomplete\nstatus --is-interactive; and pyenv init - | source\nstatus --is-interactive; and pyenv virtualenv-init - | source\n" >> ~/.config/fish/conf.d/pyenv.fish
+echo -e "\n# Enable virtualenv autocomplete\nstatus --is-interactive; and pyenv init - | source\nstatus --is-interactive; and pyenv virtualenv-init - | source\n" >> /home/starlight/.config/fish/conf.d/pyenv.fish
 pyenv install 3.10-dev
-echo "if which pyenv > /dev/null; eval "$(pyenv init -)"; end" >> ~/.profile
+echo "if which pyenv > /dev/null; eval "$(pyenv init -)"; end" >> /home/starlight/.profile
 # pip3
 apt-get -y install python3-pip
 # ohmyfish
@@ -111,7 +113,7 @@ omf install https://github.com/fabioantunes/fish-nvm
 omf install https://github.com/edc/bass
 echo "function nvm
     bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
-end" >> ~/.config/fish/functions/nvm.fish
+end" >> /home/starlight/.config/fish/functions/nvm.fish
 # Node
 nvm install node
 nvm use node
@@ -153,10 +155,10 @@ apm install 90s-hack-syntax \
 # WhiteSur
 curl -L "https://raw.githubusercontent.com/vinceliuice/WhiteSur-kde/master/install.sh" | bash
 # MesloLGS fonts
-curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_regular.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Regular.ttf
-curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Bold.ttf
-curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_italic.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Italic.ttf
-curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold_italic.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Bold\ Italic.ttf
+curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_regular.ttf?raw=true" -o /home/starlight/.local/share/fonts/MesloLGS\ NF\ Regular.ttf
+curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold.ttf?raw=true" -o /home/starlight/.local/share/fonts/MesloLGS\ NF\ Bold.ttf
+curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_italic.ttf?raw=true" -o /home/starlight/.local/share/fonts/MesloLGS\ NF\ Italic.ttf
+curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold_italic.ttf?raw=true" -o /home/starlight/.local/share/fonts/MesloLGS\ NF\ Bold\ Italic.ttf
 fc-cache -f -v
 # tide
 curl -s https://raw.githubusercontent.com/IlanCosman/tide/master/install.fish | source; and tide_install
