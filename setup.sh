@@ -33,17 +33,6 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.lis
 apt-get -y install --no-install-recommends yarn
 # Python dependencies
 apt-get -y install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-# pyenv
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-echo "set --export PYENV_ROOT $HOME/.pyenv" > ~/.config/fish/conf.d/pyenv.fish
-set -U fish_user_paths $HOME/.pyenv/bin $fish_user_paths
-echo -e '\n\n# pyenv init\nif command -v pyenv 1>/dev/null 2>&1\n  pyenv init - | source\nend' >> ~/.config/fish/config.fish
-git clone https://github.com/pyenv/pyenv-virtualenv.git (pyenv root)/plugins/pyenv-virtualenv
-echo -e "\n# Enable virtualenv autocomplete\nstatus --is-interactive; and pyenv init - | source\nstatus --is-interactive; and pyenv virtualenv-init - | source\n" >> ~/.config/fish/conf.d/pyenv.fish
-pyenv install 3.10-dev
-echo "if which pyenv > /dev/null; eval "$(pyenv init -)"; end" >> ~/.profile
-# pip3
-apt-get -y install python3-pip
 # golang
 tar -C /usr/local -xzf go1.14.3.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
@@ -137,6 +126,17 @@ mv ./config.fish ~/.config/fish/
 # Private Internet Access
 wget https://www.privateinternetaccess.com/installer/pia-nm.sh
 fish pia-nm.sh
+# pyenv
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+echo "set --export PYENV_ROOT $HOME/.pyenv" > ~/.config/fish/conf.d/pyenv.fish
+set -U fish_user_paths $HOME/.pyenv/bin $fish_user_paths
+echo -e '\n\n# pyenv init\nif command -v pyenv 1>/dev/null 2>&1\n  pyenv init - | source\nend' >> ~/.config/fish/config.fish
+git clone https://github.com/pyenv/pyenv-virtualenv.git (pyenv root)/plugins/pyenv-virtualenv
+echo -e "\n# Enable virtualenv autocomplete\nstatus --is-interactive; and pyenv init - | source\nstatus --is-interactive; and pyenv virtualenv-init - | source\n" >> ~/.config/fish/conf.d/pyenv.fish
+pyenv install 3.10-dev
+echo "if which pyenv > /dev/null; eval "$(pyenv init -)"; end" >> ~/.profile
+# pip3
+apt-get -y install python3-pip
 # ohmyfish
 curl -L https://get.oh-my.fish | fish
 # git alias plugin
