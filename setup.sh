@@ -72,7 +72,6 @@ apt-get -y install git-all \
     qbittorrent \
     vlc \
     virtualbox \
-    virtualbox—ext–pack \
     libreoffice \
     pinta \
     ninvaders \
