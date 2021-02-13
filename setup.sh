@@ -20,15 +20,15 @@ add-apt-repository -y ppa:deadsnakes/ppa
 add-apt-repository -y ppa:pinta-maintainers/pinta-stable
 add-apt-repository -y ppa:qbittorrent-team/qbittorrent-stable
 add-apt-repository -y ppa:phoerious/keepassxc
-add-apt-repository -y https://cli.github.com/packages \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+add-apt-repository -y https://cli.github.com/packages
+add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
 # update all packages
 apt-get -y update
 # Fish
 apt-get -y install fish
-chsh -s /usr/local/bin/fish
+chsh -s /usr/bin/fish
 mv ./config.fish ~/.config/fish/
 apt-get -y install git-all \
     gh
