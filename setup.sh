@@ -47,6 +47,7 @@ apt-get -y install tor \
     vim
 # Atom
 sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
+apt-get -y update
 apt-get -y install atom
 # Atom themes and packages
 apm install 90s-hack-syntax \
