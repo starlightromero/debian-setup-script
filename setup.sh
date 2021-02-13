@@ -28,22 +28,11 @@ add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu
 apt-get -y update
 # Fish
 apt-get -y install fish
-chsh -s /usr/bin/fish
 mv ./config.fish ~/.config/fish/
 apt-get -y install git-all \
     gh
 # ohmyfish
 curl -L https://get.oh-my.fish | fish
-# WhiteSur
-curl -L "https://raw.githubusercontent.com/vinceliuice/WhiteSur-kde/master/install.sh" | bash
-# MesloLGS fonts
-curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_regular.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Regular.ttf
-curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Bold.ttf
-curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_italic.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Italic.ttf
-curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold_italic.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Bold\ Italic.ttf
-fc-cache -f -v
-# tide
-curl -s https://raw.githubusercontent.com/IlanCosman/tide/master/install.fish | source; and tide_install
 # git alias plugin
 omf install https://github.com/jhillyerd/plugin-git
 # NVM
@@ -161,3 +150,15 @@ apt-get -y install ninvaders \
 # Private Internet Access
 wget https://www.privateinternetaccess.com/installer/pia-nm.sh
 fish pia-nm.sh
+# Set fish as default shell
+chsh -s /usr/bin/fish
+# WhiteSur
+curl -L "https://raw.githubusercontent.com/vinceliuice/WhiteSur-kde/master/install.sh" | bash
+# MesloLGS fonts
+curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_regular.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Regular.ttf
+curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Bold.ttf
+curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_italic.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Italic.ttf
+curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold_italic.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Bold\ Italic.ttf
+fc-cache -f -v
+# tide
+curl -s https://raw.githubusercontent.com/IlanCosman/tide/master/install.fish | source; and tide_install
