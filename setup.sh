@@ -4,7 +4,6 @@ curl -L https://get.oh-my.fish | fish
 # get packages
 sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-wget -c https://golang.org/dl/go1.15.8.linux-amd64.tar.gz
 curl -L -o "LibreWolf" "https://gitlab.com/librewolf-community/browser/linux/uploads/cfdd906e663aef41c869573abbd0fb06/LibreWolf-85.0.1-1.x86_64.AppImage"
 chmod +x ./LibreWolf
 wget "https://discordapp.com/api/download?platform=linux&format=deb" -O discord.deb
@@ -16,7 +15,10 @@ curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-
 chmod a+rx /usr/local/bin/youtube-dl
 wget https://www.privateinternetaccess.com/installer/pia-nm.sh
 # WhiteSur
-curl -L "https://raw.githubusercontent.com/vinceliuice/WhiteSur-kde/master/install.sh" | fish
+git clone https://github.com/vinceliuice/WhiteSur-kde.git
+cd WhiteSur-kde
+./install.sh
+cd ..
 # update all packages
 apt-get -y update
 apt-get -y install -f
