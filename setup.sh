@@ -33,7 +33,6 @@ export PATH=$PATH:/usr/local/go/bin
 curl -L -o "LibreWolf" "https://gitlab.com/librewolf-community/browser/linux/uploads/cfdd906e663aef41c869573abbd0fb06/LibreWolf-85.0.1-1.x86_64.AppImage"
 chmod +x ./LibreWolf
 wget "https://discordapp.com/api/download?platform=linux&format=deb" -O discord.deb
-dpkg -i discord.deb
 wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.12.2-amd64.deb
 wget https://zoom.us/client/latest/zoom_amd64.deb
 curl -L -o "Session" "https://www.getsession.org/linux"
@@ -83,6 +82,7 @@ apt-get -y install git-all \
     tint \
     ./slack-desktop-*.deb \
     ./zoom_amd64.deb
+dpkg -i discord.deb
 # Remove .deb
 rm ./slack-desktop-*.deb
 rm ./zoom_amd64.deb
