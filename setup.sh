@@ -14,13 +14,13 @@ wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 # add repositories
-add-apt-repository ppa:libreoffice/ppa
-add-apt-repository ppa:fish-shell/release-3
-add-apt-repository ppa:deadsnakes/ppa
-add-apt-repository ppa:pinta-maintainers/pinta-stable
-add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
-add-apt-repository ppa:phoerious/keepassxc
-add-apt-repository https://cli.github.com/packages \
+add-apt-repository -y ppa:libreoffice/ppa
+add-apt-repository -y ppa:fish-shell/release-3
+add-apt-repository -y ppa:deadsnakes/ppa
+add-apt-repository -y ppa:pinta-maintainers/pinta-stable
+add-apt-repository -y ppa:qbittorrent-team/qbittorrent-stable
+add-apt-repository -y ppa:phoerious/keepassxc
+add-apt-repository -y https://cli.github.com/packages \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
