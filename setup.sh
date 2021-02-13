@@ -1,37 +1,10 @@
-#!/bin/bash
-# upgrade full system
-apt-get -y full-upgrade
-# install packages to allow apt to use a repository over HTTPS
-apt-get -y install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
-    software-properties-common \
-    git-all
+#!/bin/fish
 # ohmyfish
 curl -L https://get.oh-my.fish | fish
-# add keys
-apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-# add repositories
-add-apt-repository -y ppa:deadsnakes/ppa
-add-apt-repository -y ppa:libreoffice/ppa
-add-apt-repository -y ppa:pinta-maintainers/pinta-stable
-add-apt-repository -y ppa:qbittorrent-team/qbittorrent-stable
-add-apt-repository -y ppa:phoerious/keepassxc
-add-apt-repository -y https://cli.github.com/packages
-add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
 # get packages
 sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 wget -c https://golang.org/dl/go1.15.8.linux-amd64.tar.gz
-tar -C /usr/local -xzf go1.15.8.linux-amd64.tar.gz
-export PATH=$PATH:/usr/local/go/bin
 curl -L -o "LibreWolf" "https://gitlab.com/librewolf-community/browser/linux/uploads/cfdd906e663aef41c869573abbd0fb06/LibreWolf-85.0.1-1.x86_64.AppImage"
 chmod +x ./LibreWolf
 wget "https://discordapp.com/api/download?platform=linux&format=deb" -O discord.deb
