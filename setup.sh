@@ -26,25 +26,8 @@ add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu
    stable"
 # update all packages
 apt-get -y update
-# Fish
-apt-get -y install fish
-mv ./config.fish ~/.config/fish/
 apt-get -y install git-all \
     gh
-# ohmyfish
-curl -L https://get.oh-my.fish | fish
-# git alias plugin
-omf install https://github.com/jhillyerd/plugin-git
-# NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-omf install https://github.com/fabioantunes/fish-nvm
-omf install https://github.com/edc/bass
-echo "function nvm
-    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
-end" >> ~/.config/fish/functions/nvm.fish
-# Node
-nvm install node
-nvm use node
 # Yarn
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 apt-get -y install --no-install-recommends yarn
@@ -125,6 +108,7 @@ apt-get -y install terminator \
 # Slack
 wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.12.2-amd64.deb
 apt-get -y install ./slack-desktop-*.deb
+rm ./slack-desktop-*.deb
 # Zoom
 wget https://zoom.us/client/latest/zoom_amd64.deb
 apt-get -y install ./zoom_amd64.deb
@@ -147,11 +131,26 @@ apt-get -y install ninvaders \
     nsnake \
     nudoku \
     tint
+# Fish
+apt-get -y install fish
+mv ./config.fish ~/.config/fish/
 # Private Internet Access
 wget https://www.privateinternetaccess.com/installer/pia-nm.sh
 fish pia-nm.sh
-# Set fish as default shell
-chsh -s /usr/bin/fish
+# ohmyfish
+curl -L https://get.oh-my.fish | fish
+# git alias plugin
+omf install https://github.com/jhillyerd/plugin-git
+# NVM
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+omf install https://github.com/fabioantunes/fish-nvm
+omf install https://github.com/edc/bass
+echo "function nvm
+    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+end" >> ~/.config/fish/functions/nvm.fish
+# Node
+nvm install node
+nvm use node
 # WhiteSur
 curl -L "https://raw.githubusercontent.com/vinceliuice/WhiteSur-kde/master/install.sh" | bash
 # MesloLGS fonts
@@ -162,3 +161,5 @@ curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold_i
 fc-cache -f -v
 # tide
 curl -s https://raw.githubusercontent.com/IlanCosman/tide/master/install.fish | source; and tide_install
+# Set fish as default shell
+chsh -s /usr/bin/fish
