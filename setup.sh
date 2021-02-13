@@ -89,6 +89,7 @@ rm ./discord.deb
 rm ./go1.15.8.linux-amd64.tar.gz
 # Fish
 apt-get -y install fish
+mkdir /home/starlight/.config/fish
 mv ./config.fish /home/starlight/.config/fish/
 # Private Internet Access
 fish pia-nm.sh
