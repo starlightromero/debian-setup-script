@@ -69,7 +69,7 @@ apm install 90s-hack-syntax \
     linter \
     linter-js-standard \
     linter-ui-default \
-    markdown-writter \
+    markdown-writer \
     pigments \
     platformio-ide-terminal \
     prettier-atom \
@@ -80,7 +80,7 @@ apm install 90s-hack-syntax \
     standard-formatter \
     tidy-markdown \
     tool-bar \
-    tool-bar-markdown-writter \
+    tool-bar-markdown-writer \
     zentabs \
 # Docker
 apt-get -y install docker-ce docker-ce-cli containerd.io
