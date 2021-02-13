@@ -52,7 +52,6 @@ apt-get -y install --no-install-recommends yarn \
     libreadline-dev \
     libsqlite3-dev \
     wget \
-    curl \
     llvm \
     libncurses5-dev \
     xz-utils \
