@@ -27,7 +27,7 @@ add-apt-repository -y https://cli.github.com/packages \
 # update all packages
 apt-get -y update
 # WhiteSur
-curl -L "https://raw.githubusercontent.com/vinceliuice/WhiteSur-kde/master/install.sh" | source
+curl -L "https://raw.githubusercontent.com/vinceliuice/WhiteSur-kde/master/install.sh" | bash
 # Fish
 apt-get -y install fish
 chsh -s /usr/local/bin/fish
