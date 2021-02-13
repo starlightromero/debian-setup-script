@@ -25,6 +25,7 @@ add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu
    $(lsb_release -cs) \
    stable"
 # Go
+wget -c https://golang.org/dl/go1.15.8.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.15.8.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 # Fish
