@@ -7,7 +7,8 @@ apt-get -y install \
     ca-certificates \
     curl \
     gnupg-agent \
-    software-properties-common
+    software-properties-common \
+    git-all
 # ohmyfish
 curl -L https://get.oh-my.fish | fish
 # add keys
@@ -74,8 +75,7 @@ end" >> /home/starlight/.config/fish/functions/nvm.fish
 # Node
 nvm install node
 nvm use node
-apt-get -y install git-all \
-    gh \
+apt-get -y install gh \
     gcc \
     docker-ce docker-ce-cli containerd.io \
     tor \
