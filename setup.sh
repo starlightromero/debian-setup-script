@@ -17,9 +17,8 @@ wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 # add repositories
-add-apt-repository -y ppa:libreoffice/ppa
-add-apt-repository -y ppa:fish-shell/release-3
 add-apt-repository -y ppa:deadsnakes/ppa
+add-apt-repository -y ppa:libreoffice/ppa
 add-apt-repository -y ppa:pinta-maintainers/pinta-stable
 add-apt-repository -y ppa:qbittorrent-team/qbittorrent-stable
 add-apt-repository -y ppa:phoerious/keepassxc
