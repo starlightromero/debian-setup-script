@@ -34,7 +34,8 @@ apt-get -y install --no-install-recommends yarn
 # Python dependencies
 apt-get -y install --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 # golang
-tar -C /usr/local -xzf go1.14.3.linux-amd64.tar.gz
+wget -c https://golang.org/dl/go1.15.8.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.15.8.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 # C
 apt-get -y install gcc \
