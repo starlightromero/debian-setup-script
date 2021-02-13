@@ -26,8 +26,6 @@ add-apt-repository -y https://cli.github.com/packages \
    stable"
 # update all packages
 apt-get -y update
-# WhiteSur
-curl -L "https://raw.githubusercontent.com/vinceliuice/WhiteSur-kde/master/install.sh" | bash
 # Fish
 apt-get -y install fish
 chsh -s /usr/local/bin/fish
@@ -36,6 +34,8 @@ apt-get -y install git-all \
     gh
 # ohmyfish
 curl -L https://get.oh-my.fish | fish
+# WhiteSur
+curl -L "https://raw.githubusercontent.com/vinceliuice/WhiteSur-kde/master/install.sh" | bash
 # MesloLGS fonts
 curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_regular.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Regular.ttf
 curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Bold.ttf
