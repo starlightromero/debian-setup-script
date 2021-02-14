@@ -39,17 +39,20 @@ apt-get -y install --no-install-recommends yarn \
     libxmlsec1-dev \
     libffi-dev \
     liblzma-dev
+# curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+# omf install https://github.com/fabioantunes/fish-nvm
+# omf install https://github.com/edc/bass
+# mkdir /home/starlight/.config/fish/functions
+# echo "function nvm
+#     bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+# end" >> /home/starlight/.config/fish/functions/nvm.fish
+# Fisher
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 # NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-omf install https://github.com/fabioantunes/fish-nvm
-omf install https://github.com/edc/bass
-mkdir /home/starlight/.config/fish/functions
-echo "function nvm
-    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
-end" >> /home/starlight/.config/fish/functions/nvm.fish
+fisher install jorgebucaran/nvm.fish
 # Node
-nvm install node
-nvm use node
+nvm install latest
+nvm use latest
 apt-get -y install gh \
     gcc \
     docker-ce docker-ce-cli containerd.io \
