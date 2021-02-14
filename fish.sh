@@ -24,10 +24,6 @@ sudo add-apt-repository -y https://cli.github.com/packages
 sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
-# Go
-wget -c https://golang.org/dl/go1.15.8.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.15.8.linux-amd64.tar.gz
-export PATH=$PATH:/usr/local/go/bin
 # Fish
 sudo add-apt-repository -y ppa:fish-shell/release-3
 sudo apt-get -y update && apt-get -y upgrade

@@ -55,6 +55,7 @@ end" >> ~/.config/fish/functions/nvm.fish
 nvm install latest
 nvm use latest
 sudo apt-get -y install gh \
+    golang-go \
     gcc \
     docker-ce docker-ce-cli containerd.io \
     tor \
