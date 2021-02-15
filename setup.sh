@@ -33,9 +33,12 @@ cd WhiteSur-kde
 ./install.sh
 cd ..
 # remove snaps
-sudo rm -rf /var/cache/snapd/
-sudo apt autoremove --purge snapd gnome-software-plugin-snap
-rm -fr ~/snap
+sudo umount /var/snap
+sudo apt purge snapd
+rm -rf ~/snap
+sudo rm -rf /snap
+sudo rm -rf /var/snap
+sudo rm -rf /var/lib/snapd
 # update all packages
 sudo apt-get -y update
 sudo apt-get -y install -f
