@@ -29,6 +29,8 @@ sudo chmod a+rx /usr/local/bin/youtube-dl
 wget https://www.privateinternetaccess.com/installer/pia-nm.sh
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+wget -q https://packagecloud.io/AtomEditor/atom/gpgkey -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main"
 # WhiteSur
 git clone https://github.com/vinceliuice/WhiteSur-kde.git
 cd WhiteSur-kde
