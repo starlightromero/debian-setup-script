@@ -121,7 +121,6 @@ apm install 90s-hack-syntax \
 rm ./slack-desktop-*.deb
 rm ./zoom_amd64.deb
 rm ./discord.deb
-rm ./go1.15.8.linux-amd64.tar.gz
 # Private Internet Access
 fish pia-nm.sh
 # pyenv
