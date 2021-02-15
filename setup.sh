@@ -19,8 +19,11 @@ git clone https://github.com/vinceliuice/WhiteSur-kde.git
 cd WhiteSur-kde
 ./install.sh
 cd ..
+# remove snaps
+sudo rm -rf /var/cache/snapd/
+sudo apt autoremove --purge snapd gnome-software-plugin-snap
 # update all packages
-sudo apt autoremove --purge snapd
+rm -fr ~/snap
 sudo apt-get -y update
 sudo apt-get -y install -f
 sudo apt-get -y install --no-install-recommends yarn \
