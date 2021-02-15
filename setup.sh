@@ -32,13 +32,6 @@ git clone https://github.com/vinceliuice/WhiteSur-kde.git
 cd WhiteSur-kde
 ./install.sh
 cd ..
-# remove snaps
-sudo umount /var/snap
-sudo apt purge snapd
-rm -rf ~/snap
-sudo rm -rf /snap
-sudo rm -rf /var/snap
-sudo rm -rf /var/lib/snapd
 # update all packages
 sudo apt-get -y update
 sudo apt-get -y install -f
@@ -147,3 +140,10 @@ pyenv install 3.10-dev
 echo "if which pyenv > /dev/null; eval "$(pyenv init -)"; end" >> ~/.profile
 # pip3
 sudo apt-get -y install python3-pip
+# remove snaps
+sudo umount /var/snap
+sudo apt purge snapd
+rm -rf ~/snap
+sudo rm -rf /snap
+sudo rm -rf /var/snap
+sudo rm -rf /var/lib/snapd
