@@ -121,8 +121,6 @@ apm install 90s-hack-syntax \
 rm ./slack-desktop-*.deb
 rm ./zoom_amd64.deb
 rm ./discord.deb
-# Private Internet Access
-sudo bash pia-nm.sh
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 mkdir ~/.config/fish/conf.d/
@@ -144,3 +142,5 @@ sudo rm -rf /var/snap
 sudo rm -rf /var/lib/snapd
 # tide configure
 tide configure
+# Private Internet Access
+sudo bash pia-nm.sh
