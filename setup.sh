@@ -35,8 +35,8 @@ cd ..
 # remove snaps
 sudo rm -rf /var/cache/snapd/
 sudo apt autoremove --purge snapd gnome-software-plugin-snap
-# update all packages
 rm -fr ~/snap
+# update all packages
 sudo apt-get -y update
 sudo apt-get -y install -f
 sudo apt-get -y install --no-install-recommends yarn \
