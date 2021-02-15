@@ -70,6 +70,7 @@ Node
 nvm install latest
 nvm use latest
 sudo apt-get -y install gh \
+    brave-browser \
     golang-go \
     gcc \
     docker-ce docker-ce-cli containerd.io \
