@@ -20,6 +20,7 @@ cd WhiteSur-kde
 ./install.sh
 cd ..
 # update all packages
+sudo apt autoremove --purge snapd
 sudo apt-get -y update
 sudo apt-get -y install -f
 sudo apt-get -y install --no-install-recommends yarn \
