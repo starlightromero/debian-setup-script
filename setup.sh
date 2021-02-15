@@ -122,7 +122,7 @@ rm ./slack-desktop-*.deb
 rm ./zoom_amd64.deb
 rm ./discord.deb
 # Private Internet Access
-fish pia-nm.sh
+sudo bash pia-nm.sh
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 mkdir ~/.config/fish/conf.d/
