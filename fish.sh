@@ -13,7 +13,6 @@ sudo apt-get -y install \
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | apt-key add -
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 # add repositories
 sudo add-apt-repository -y ppa:deadsnakes/ppa
 sudo add-apt-repository -y ppa:libreoffice/ppa
@@ -21,9 +20,13 @@ sudo add-apt-repository -y ppa:pinta-maintainers/pinta-stable
 sudo add-apt-repository -y ppa:qbittorrent-team/qbittorrent-stable
 sudo add-apt-repository -y ppa:phoerious/keepassxc
 sudo add-apt-repository -y https://cli.github.com/packages
+# docker
+sudo su
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
+su starlight
 # Fish
 sudo add-apt-repository -y ppa:fish-shell/release-3
 sudo apt-get -y update && apt-get -y upgrade
