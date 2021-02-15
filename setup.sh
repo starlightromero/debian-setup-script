@@ -1,6 +1,19 @@
 #!/bin/fish
 # ohmyfish
 curl -L https://get.oh-my.fish | fish
+# git alias plugin
+omf install https://github.com/jhillyerd/plugin-git
+# MesloLGS fonts
+mkdir ~/.local/share/fonts/
+curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_regular.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Regular.ttf
+curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Bold.ttf
+curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_italic.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Italic.ttf
+curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold_italic.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Bold\ Italic.ttf
+fc-cache -f -v
+# Fisher
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+# tide
+fisher install IlanCosman/tide
 # get packages
 sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
@@ -132,14 +145,3 @@ pyenv install 3.10-dev
 echo "if which pyenv > /dev/null; eval "$(pyenv init -)"; end" >> ~/.profile
 # pip3
 sudo apt-get -y install python3-pip
-# git alias plugin
-omf install https://github.com/jhillyerd/plugin-git
-# MesloLGS fonts
-mkdir ~/.local/share/fonts/
-curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_regular.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Regular.ttf
-curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Bold.ttf
-curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_italic.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Italic.ttf
-curl -L "https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold_italic.ttf?raw=true" -o ~/.local/share/fonts/MesloLGS\ NF\ Bold\ Italic.ttf
-fc-cache -f -v
-# tide
-curl -s https://raw.githubusercontent.com/IlanCosman/tide/master/install.fish | source; and tide_install
