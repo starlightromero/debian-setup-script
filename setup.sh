@@ -140,7 +140,5 @@ rm -rf ~/snap
 sudo rm -rf /snap
 sudo rm -rf /var/snap
 sudo rm -rf /var/lib/snapd
-# tide configure
-tide configure
 # Private Internet Access
 sudo bash pia-nm.sh
