@@ -24,8 +24,8 @@ wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.12.2-amd64.
 wget https://zoom.us/client/latest/zoom_amd64.deb
 curl -L -o "Session" "https://www.getsession.org/linux"
 chmod +x ./Session
-curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-chmod a+rx /usr/local/bin/youtube-dl
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl
 wget https://www.privateinternetaccess.com/installer/pia-nm.sh
 # WhiteSur
 git clone https://github.com/vinceliuice/WhiteSur-kde.git
