@@ -130,7 +130,7 @@ echo -e '\n\n# pyenv init\nif command -v pyenv 1>/dev/null 2>&1\n  pyenv init - 
 git clone https://github.com/pyenv/pyenv-virtualenv.git (pyenv root)/plugins/pyenv-virtualenv
 echo -e "\n# Enable virtualenv autocomplete\nstatus --is-interactive; and pyenv init - | source\nstatus --is-interactive; and pyenv virtualenv-init - | source\n" >> ~/.config/fish/conf.d/pyenv.fish
 pyenv install 3.10-dev
-echo "if which pyenv > /dev/null; eval "$(pyenv init -)"; end" >> ~/.profile
+echo "if which pyenv > /dev/null; eval '(pyenv)'; end" >> ~/.profile
 # pip3
 sudo apt-get -y install python3-pip
 # remove snaps
